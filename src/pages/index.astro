@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Waitlist from '../components/Waitlist.astro';
+---
+
+<Base title="Neural Napper — your AI nods, you sleep">
+  <Hero />
+  <Features heading="Why people stop setting alarms" limit={3} blurb="A quick look at what the agent does on your behalf. See every feature on the Features page." />
+  <Pricing heading="Pick a sleep depth" />
+  <FAQ />
+  <Waitlist />
+</Base>

@@ -1,0 +1,40 @@
+---
+import { features } from '../data/site';
+
+interface Props {
+  heading?: string;
+  blurb?: string;
+  limit?: number;
+}
+
+const {
+  heading = 'Feature highlights',
+  blurb = 'Everything you need to be present without being present.',
+  limit,
+} = Astro.props;
+
+const items = limit ? features.slice(0, limit) : features;
+---
+
+<section class="section" id="features">
+  <div class="wrap">
+    <p class="eyebrow">Capabilities</p>
+    <h2>{heading}</h2>
+    <p class="lead">{blurb}</p>
+    <div class="grid grid-3 cards">
+      {items.map((f) => (
+        <article class="panel">
+          <span class="icon neon">{f.icon}</span>
+          <h3>{f.title}</h3>
+          <p>{f.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cards { margin-top: 2.4rem; }
+  .icon { font-size: 1.6rem; display: block; margin-bottom: 0.7rem; }
+  article p { margin: 0; font-size: 0.98rem; }
+</style>

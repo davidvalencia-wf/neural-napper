@@ -1,0 +1,55 @@
+---
+---
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Neural Napper Company // v0.9 beta</p>
+    <h1>Your AI <span class="neon">nods</span>.<br />You <span class="neon-pink">sleep</span>.</h1>
+    <p class="lead">
+      Neural Napper joins your video calls, nods at exactly the right moments, murmurs a
+      thoughtful "mm, totally" and delivers clean notes to your inbox — all while you're
+      face-down in a pillow.
+    </p>
+    <div class="cta">
+      <a href="/#waitlist" class="btn">Join the waitlist</a>
+      <a href="/features" class="btn btn-ghost">See the features</a>
+    </div>
+    <ul class="stats mono">
+      <li><strong class="neon">41,208</strong><span>meetings survived</span></li>
+      <li><strong class="neon">7.4h</strong><span>sleep per workday</span></li>
+      <li><strong class="neon">0</strong><span>coworkers suspicious</span></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hero { padding: 6.5rem 0 5rem; position: relative; overflow: hidden; }
+  .hero h1 { font-size: 106px; }
+  .hero::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -40%;
+    width: 120vw;
+    height: 60vh;
+    transform: translateX(-50%);
+    background: radial-gradient(closest-side, rgba(0, 240, 255, 0.16), transparent 70%);
+    pointer-events: none;
+  }
+  .cta { display: flex; gap: 0.9rem; flex-wrap: wrap; margin: 2rem 0 0; }
+  .stats {
+    list-style: none;
+    display: flex;
+    gap: 2.6rem;
+    padding: 2.6rem 0 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  .stats li { display: flex; flex-direction: column; }
+  .stats strong { font-family: var(--font-display); font-size: 1.7rem; }
+  .stats span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+  }
+</style>

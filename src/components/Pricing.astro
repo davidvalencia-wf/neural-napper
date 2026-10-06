@@ -1,0 +1,55 @@
+---
+import { tiers } from '../data/site';
+
+interface Props {
+  heading?: string;
+}
+const { heading = 'Pricing tiers' } = Astro.props;
+---
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <p class="eyebrow">Plans</p>
+    <h2>{heading}</h2>
+    <p class="lead">Billed monthly. Cancel whenever you rejoin the waking world.</p>
+    <div class="grid grid-3 tiers">
+      {tiers.map((t) => (
+        <article class={t.featured ? 'panel tier featured' : 'panel tier'}>
+          {t.featured && <span class="badge mono">Most popular</span>}
+          <h3>{t.name}</h3>
+          <p class="price display">{t.price}<span class="cadence mono">{t.cadence}</span></p>
+          <p class="tagline">{t.tagline}</p>
+          <ul>
+            {t.features.map((f) => <li><span class="tick neon">▸</span>{f}</li>)}
+          </ul>
+          <a href="/#waitlist" class={t.featured ? 'btn' : 'btn btn-ghost'}>{t.cta}</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tiers { margin-top: 2.4rem; align-items: start; }
+  .tier { display: flex; flex-direction: column; gap: 0.5rem; position: relative; }
+  .tier.featured { border-color: var(--magenta); box-shadow: 0 0 34px rgba(255, 43, 214, 0.25); }
+  .badge {
+    position: absolute;
+    top: -0.75rem;
+    right: 1.2rem;
+    background: var(--magenta);
+    color: #11001a;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 99px;
+  }
+  .price { font-size: 2.4rem; margin: 0; color: var(--text); }
+  .cadence { font-size: 0.78rem; color: var(--muted); margin-left: 0.4rem; }
+  .tagline { margin: 0 0 0.6rem; font-size: 0.95rem; }
+  ul { list-style: none; padding: 0; margin: 0 0 1.4rem; flex: 1; }
+  li { font-size: 0.95rem; padding: 0.3rem 0; color: var(--text); }
+  .tick { margin-right: 0.5rem; }
+  .btn { text-align: center; }
+</style>

@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import Features from '../components/Features.astro';
+import FAQ from '../components/FAQ.astro';
+import Waitlist from '../components/Waitlist.astro';
+---
+
+<Base title="Features — Neural Napper">
+  <section class="section head">
+    <div class="wrap">
+      <p class="eyebrow">Features</p>
+      <h1>Presence, <span class="neon">simulated</span> faithfully</h1>
+      <p class="lead">
+        Six systems working together so your little square on the call looks engaged,
+        agreeable and suspiciously well-rested.
+      </p>
+    </div>
+  </section>
+
+  <Features heading="The full stack of nodding" blurb="Each module ships on by default and can be switched off per meeting." />
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Three steps to unconsciousness</h2>
+      <div class="grid grid-3 steps">
+        <article class="panel"><span class="num neon">01</span><h3>Connect your calendar</h3><p>Google, Outlook or iCal. The agent reads titles, attendees and agendas.</p></article>
+        <article class="panel"><span class="num neon">02</span><h3>Train your double</h3><p>Ninety seconds of video. We build your nod, your blink and your "mm, totally."</p></article>
+        <article class="panel"><span class="num neon">03</span><h3>Go to bed</h3><p>It joins, nods, writes the notes and emails you a summary before you wake up.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <FAQ />
+  <Waitlist />
+</Base>
+
+<style>
+  .head { padding-bottom: 1rem; }
+  .steps { margin-top: 2.2rem; }
+  .num { font-family: var(--font-display); font-size: 1.5rem; display: block; margin-bottom: 0.4rem; }
+  .steps p { margin: 0; font-size: 0.98rem; }
+</style>

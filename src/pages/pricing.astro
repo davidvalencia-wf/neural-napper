@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Waitlist from '../components/Waitlist.astro';
+---
+
+<Base title="Pricing — Neural Napper">
+  <section class="section head">
+    <div class="wrap">
+      <p class="eyebrow">Pricing</p>
+      <h1>Sleep is <span class="neon-pink">cheaper</span> than you think</h1>
+      <p class="lead">
+        Three tiers, no setup fees, no per-meeting charges. Launch pricing is locked for
+        waitlist members for twelve months.
+      </p>
+    </div>
+  </section>
+
+  <Pricing heading="Compare the tiers" />
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Included everywhere</p>
+      <h2>In every plan</h2>
+      <ul class="incl grid grid-3">
+        <li class="panel">Consent banner for every call</li>
+        <li class="panel">End-to-end encrypted recordings</li>
+        <li class="panel">30-day auto-delete by default</li>
+        <li class="panel">Calendar sync (Google, Outlook, iCal)</li>
+        <li class="panel">Export to Notion, Slack and email</li>
+        <li class="panel">Never trained on your meetings</li>
+      </ul>
+    </div>
+  </section>
+
+  <FAQ />
+  <Waitlist />
+</Base>
+
+<style>
+  .head { padding-bottom: 1rem; }
+  .incl { list-style: none; padding: 0; margin-top: 2.2rem; }
+  .incl li { font-size: 0.95rem; color: var(--text); }
+</style>

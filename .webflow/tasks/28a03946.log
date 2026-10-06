@@ -1,0 +1,32 @@
+
+> neural-napper@0.1.0 dev
+> astro dev
+
+11:49:59 [types] Generated 0ms
+11:49:59 [content] Syncing content
+11:49:59 [content] Synced content
+
+ astro  v5.18.2 ready in 89 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+11:49:59 watching for file changes...
+
+ update  ▶ New version of Astro available: 7.3.6
+  Run npx @astrojs/upgrade to update
+
+11:50:05 [200] / 14ms
+11:50:22 [200] /features 5ms
+11:50:26 [200] /pricing 4ms
+11:50:32 [200] / 3ms
+11:51:53 [200] /features 3ms
+11:51:54 [200] /pricing 2ms
+11:51:55 [200] / 4ms
+11:51:59 [200] /features 3ms
+11:52:01 [200] / 2ms
+11:56:33 [200] / 6ms
+11:57:57 [200] / 2ms
+11:58:27 [watch] /src/components/Hero.astro?astro&type=style&index=0&lang.css
+11:58:27 [watch] src/components/Hero.astro
+11:58:50 [200] / 4ms

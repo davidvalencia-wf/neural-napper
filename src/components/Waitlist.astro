@@ -1,0 +1,71 @@
+---
+---
+<section class="section" id="waitlist">
+  <div class="wrap">
+    <div class="panel box">
+      <p class="eyebrow">Early access</p>
+      <h2>Join the waitlist</h2>
+      <p>Public beta opens this quarter. We let people in strictly in order.</p>
+      <form id="waitlist-form" novalidate>
+        <div class="row">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Ada L." required />
+          </div>
+          <div>
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required />
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="meetings">Meetings per week</label>
+            <select id="meetings" name="meetings">
+              <option>Under 10 — still hopeful</option>
+              <option selected>10–25 — fading</option>
+              <option>26–40 — send help</option>
+              <option>40+ — I am the meeting</option>
+            </select>
+          </div>
+          <div>
+            <label for="tier">Plan of interest</label>
+            <select id="tier" name="tier">
+              <option>Power Nap</option>
+              <option selected>Deep Sleep</option>
+              <option>Hibernation</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn" type="submit">Reserve my spot</button>
+        <p class="note mono" id="waitlist-note" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const form = document.getElementById('waitlist-form');
+  const note = document.getElementById('waitlist-note');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const email = String(data.get('email') ?? '').trim();
+    const name = String(data.get('name') ?? '').trim();
+    if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      note.textContent = '// error: a name and a valid email are required.';
+      note.style.color = '#ff2bd6';
+      return;
+    }
+    note.textContent = `// confirmed. ${name}, you're on the list. Go back to sleep.`;
+    note.style.color = '#b6ff3a';
+    form.reset();
+  });
+</script>
+
+<style>
+  .box { padding: 2.6rem; }
+  .box > p { max-width: 50ch; }
+  form { margin-top: 1.6rem; display: grid; gap: 1.1rem; justify-items: start; }
+  .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.1rem; width: 100%; }
+  .note { font-size: 0.82rem; min-height: 1.2em; margin: 0; }
+</style>

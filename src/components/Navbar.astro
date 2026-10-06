@@ -1,0 +1,73 @@
+---
+const { pathname } = Astro.url;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/features', label: 'Features' },
+  { href: '/pricing', label: 'Pricing' },
+];
+const isActive = (href: string) =>
+  href === '/' ? pathname === '/' : pathname.startsWith(href);
+---
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand">
+      <span class="dot"></span>
+      <span>NEURAL<span class="neon-pink">NAPPER</span></span>
+    </a>
+    <nav>
+      {links.map((l) => (
+        <a href={l.href} class={isActive(l.href) ? 'link active' : 'link'}>{l.label}</a>
+      ))}
+      <a href="/#waitlist" class="btn nav-btn">Join waitlist</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(5, 2, 14, 0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    font-size: 0.95rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .brand:hover { text-decoration: none; }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 14px 3px rgba(0, 240, 255, 0.8);
+  }
+  nav { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+  .link {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.74rem;
+    color: var(--muted);
+  }
+  .link:hover, .link.active { color: var(--cyan); text-decoration: none; }
+  .link.active { text-shadow: 0 0 12px rgba(0, 240, 255, 0.7); }
+  .nav-btn { padding: 0.6rem 1.1rem; font-size: 0.72rem; }
+</style>
